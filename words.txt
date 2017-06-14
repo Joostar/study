@@ -551,6 +551,7 @@ arbitrarily 任意地，武断地，肆意地
 robust 稳健的，健壮的
 reenable 重新启用
 megabytes 兆字节
+heuristic 启发式的，探试的，探索的
 
 
 
