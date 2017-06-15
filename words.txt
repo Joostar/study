@@ -406,6 +406,7 @@ technique 技术，技巧
 derived 派生，衍生，导出，由来
 cardinality 基数
 first letter capitalized 首字母大写
+capitalized 大写的
 category 类别，种类，类型，分类
 intermediate 中间的，中级的，调解，干涉
 informal 非正式的
@@ -552,9 +553,14 @@ robust 稳健的，健壮的
 reenable 重新启用
 megabytes 兆字节
 heuristic 启发式的，探试的，探索的
-
-
-
+memory corruption 内存崩溃，内存损坏，内存错误
+corruption 腐败，贪污，贿赂，变体
+counterproductive 适得其反
+relinquish 放弃
+Deferred 延期的，推迟的
+acronym 首字母缩略词，缩写
+auxiliary 辅助的，附加的
+scarce 缺乏的，稀缺的
 
 
 
