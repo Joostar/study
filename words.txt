@@ -19,6 +19,7 @@ spawns 产生
 independent 独立的
 dependent 依赖的，依靠的
 dependence 依赖，依靠
+holistic 全面的，整体的
 scheduled 调度
 separately 分别地
 chapter 章节
@@ -328,7 +329,7 @@ maintain 维护，保持，坚持
 preserve 保护，保持，保存
 conserve 保护，保藏，保存
 sanity 神志正常，思路清晰
-approach 接近，走近，靠近，方法，途径
+approach 途径，接近，走近，靠近，方法
 major 主要的，重大的
 embark 着手，开始做某事
 practice 练习
@@ -418,6 +419,7 @@ generic 一般的，通用的
 parameterized 参数化的
 expose 暴露，揭发
 efficient 高效的，有效率的
+efficiency 效率
 collection operator 集合运算符
 embed 把…嵌入
 omitted 省略，遗漏
