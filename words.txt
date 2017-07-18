@@ -45,6 +45,8 @@ encompasses 包括
 occasional 临时的，偶然的
 critical 危急的，临界的
 frequent 频繁的
+Serial 串行
+Concurrent 并发
 appropriately 适当地
 appropriate 适当的
 preceding 前面的
@@ -183,6 +185,12 @@ permanently 永久地
 proper 正确，适当
 combination 组合
 omit 忽略
+validate 证实，验证，使合法化
+discrete 分离的，离散的
+graft 移植，嫁接
+Expect 期望，预料
+Except 除了，把..除外
+responsive 应答的，响应的
 integrity 完整性
 expense 费用，花费，开销
 contrast 对比
@@ -196,7 +204,7 @@ fundamental 基本的，基础的
 Directive 指示，指令
 distinguish 区分
 precautionary 预防
-measure 措施
+measure 措施，测量
 implicitly 隐式
 implicit 隐式的，含蓄的
 semantics 语义
@@ -276,7 +284,7 @@ comprise 包括，包含，由..组成
 introspection 内省，自我检查
 inheritance hierarchy 继承层次（结构）
 consisting 包括，由...组成
-consist 包含，有..组成
+consist 包含，由..组成
 selective 选择性，精心选择的，选择的
 replicate 复制，重写，重复
 occasion 场合，机会，时刻
@@ -563,8 +571,8 @@ Deferred 延期的，推迟的
 acronym 首字母缩略词，缩写
 auxiliary 辅助的，附加的
 scarce 缺乏的，稀缺的
-
-
+linger 逗留，徘徊
+arbitrary 任意的，随意的
 
 
 
