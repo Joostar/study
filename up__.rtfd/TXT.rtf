@@ -18,7 +18,7 @@
 \red181\green0\blue19;\red46\green58\blue89;\red58\green58\blue62;\red247\green249\blue249;\red58\green58\blue58;
 \red255\green128\blue0;\red0\green68\blue254;\red43\green71\blue20;\red0\green61\blue204;\red29\green48\blue13;
 \red53\green53\blue53;\red184\green14\blue61;\red247\green238\blue241;\red35\green35\blue35;\red29\green29\blue29;
-\red83\green104\blue112;\red244\green244\blue244;\red35\green35\blue35;}
+\red83\green104\blue112;\red244\green244\blue244;\red35\green35\blue35;\red35\green35\blue35;}
 {\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000;\cssrgb\c40000\c40000\c40000;
 \cssrgb\c97647\c97647\c97647;\cssrgb\c0\c0\c0;\cssrgb\c7451\c43137\c76078;\cssrgb\c60000\c60000\c60000;\cssrgb\c94510\c96078\c97647;
 \cssrgb\c33333\c33333\c33333;\cssrgb\c87451\c20392\c20392;\cssrgb\c20000\c40000\c80000;\cssrgb\c94118\c95294\c96863;\csgenericrgb\c39100\c22000\c12500;
@@ -32,7 +32,7 @@
 \cssrgb\c76863\c10196\c8627;\cssrgb\c23529\c29804\c42353;\cssrgb\c29412\c29412\c30980;\cssrgb\c97647\c98039\c98039;\cssrgb\c29412\c29412\c29412;
 \csgenericrgb\c100000\c50000\c0;\csgenericrgb\c0\c26667\c99608;\csgenericrgb\c16863\c27843\c7843;\csgenericrgb\c0\c23922\c80000;\csgenericrgb\c11373\c18824\c5098;
 \cssrgb\c27059\c27059\c27059;\cssrgb\c78039\c14510\c30588;\cssrgb\c97647\c94902\c95686;\cssrgb\c18039\c18039\c18039;\cssrgb\c14902\c14902\c14902;
-\cssrgb\c39608\c48235\c51373;\cssrgb\c96471\c96471\c96471;\cssrgb\c18431\c18431\c18431;}
+\cssrgb\c39608\c48235\c51373;\cssrgb\c96471\c96471\c96471;\cssrgb\c18431\c18431\c18431;\cssrgb\c18431\c18431\c18431;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
@@ -6817,10 +6817,1250 @@ page->\cf36 releaseUntil\cf16 (stop);\cf26 //
 \cf6 \
 \
 //\
+OC \'d6\'d0 \'b6\'d4 autorelease \'b5\'c4\'d3\'c5\'bb\'af\'a3\'ba\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 inline\cf16 \cb19  \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::autorelease()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19  (\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf14 \cb19 fastpath\cf16 \cb19 (!\cf36 \cb19 ISA\cf16 \cb19 ()->\cf36 \cb19 hasCustomRR\cf16 \cb19 ())) \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 rootAutorelease\cf16 \cb19 ();\cf26 \cb19 //
+\f3 \'b5\'f7\'d3\'c3
+\f6 rootAutorelease
+\f3 \'a3\'ac\'c4\'da\'b2\'bf\'bf\'c9\'c4\'dc\'bb\'e1\'bc\'d3\'c8\'eb\'b5\'bd
+\f6 pool
+\f3 \'d6\'d0
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  ((\cf17 \cb19 id\cf16 \cb19 (*)(\cf35 objc_object\cf16  *, \cf17 \cb19 SEL\cf16 \cb19 ))\cf18 objc_msgSend\cf16 )(\cf17 \cb19 this\cf16 \cb19 , \cf35 SEL_autorelease\cf16 );\cf26 \cb19 //
+\f3 \'c8\'e7\'b9\'fb\'d7\'d4\'bc\'ba\'ca\'b5\'cf\'d6\'c1\'cb
+\f6 RR
+\f3 \'a3\'ac\'d6\'b1\'bd\'d3\'b5\'f7\'d3\'c3
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16 \}
+\f10\fs24 \cf0 \
+\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::rootAutorelease()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19  (\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;\cf26 \cb19 //
+\f3 \'b6\'d4\'d3\'da
+\f6 taggedPointer
+\f3 \'b6\'d4\'cf\'f3\'a3\'ac\'c9\'b6\'b6\'bc\'b2\'bb\'d7\'f6
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 prepareOptimizedReturn\cf16 \cb19 (\cf36 \cb19 ReturnAtPlus1\cf16 \cb19 )) \cf17 \cb19 return\cf16 \cb19  (\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;\cf26 \cb19 //
+\f3 \'bf\'c9\'d2\'d4\'b1\'bb\'d3\'c5\'bb\'af\'a3\'ac\'d6\'b1\'bd\'d3
+\f6 return this
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 rootAutorelease2\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf6 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf36 \cb19 \kerning1\expnd0\expndtw0 prepareOptimizedReturn 
+\f3 \'b7\'bd\'b7\'a8\'d3\'c3\'c0\'b4\'c5\'d0\'b6\'cf\'c4\'dc\'b7\'f1\'d6\'a7\'b3\'d6\'d3\'c5\'bb\'af\'a1\'a3\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf26 \cb19  
+\f3 \'b1\'bb\'d3\'c5\'bb\'af\'b5\'c4
+\f6  callee
+\f3 \'a3\'ac\'cd\'a8\'b9\'fd\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b5\'d8\'d6\'b7\'a3\'a8
+\f6 following the return
+\f3 \'a3\'a9\'b2\'e9\'d5\'d2\'b5\'bd
+\f6 caller 
+\f3 \'b5\'f7\'d3\'c3\'b4\'cb\'ba\'af\'ca\'fd\'d2\'d4\'ba\'f3\'cf\'c2\'c3\'e6\'b5\'c4\'d6\'b8\'c1\'ee\'a3\'ac\'c8\'e7\'b9\'fb
+\f6 caller
+\f3 \'b5\'c4\'d6\'b8\'c1\'ee\'d2\'b2\'b1\'bb\'d3\'c5\'bb\'af\'a3\'ac\'c4\'c7\'c3\'b4
+\f6 callee
+\f3 \'bd\'ab\'cc\'f8\'b9\'fd\'cb\'f9\'d3\'d0\'b5\'c4
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  retain count 
+\f3 \'b2\'d9\'d7\'f7\'a3\'ba
+\f6 no autorelease, no retain/autorelease.
+\f3 \'c8\'bb\'ba\'f3
+\f6 callee
+\f3 \'d6\'bb\'ca\'c7\'b0\'d1\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b5\'b1\'c7\'b0\'b5\'c4
+\f6 retain count (+0 
+\f3 \'bb\'f2
+\f6  +1 )
+\f3 \'b4\'e6\'b4\'a2\'d4\'da
+\f6 TLS
+\f3 \'a3\'a8\'cf\'df\'b3\'cc\'c4\'da\'b4\'e6\'b4\'a2\'a3\'a9\'c4\'da\'a1\'a3\'c8\'e7\'b9\'fb
+\f6 caller
+\f3 \'c3\'bb\'d3\'d0\'b1\'bb\'d3\'c5\'bb\'af\'a3\'ac\'c4\'c7\'c3\'b4
+\f6 callee
+\f3 \'bb\'e1\'b6\'d4\'b7\'b5\'bb\'d8\'d6\'b5\'d6\'b4\'d0\'d0\'d5\'fd\'b3\'a3\'b5\'c4
+\f6 autorelease or retain/autorelease 
+\f3 \'b2\'d9\'d7\'f7\'a1\'a3\
+\
+\'b1\'bb\'d3\'c5\'bb\'af\'b5\'c4
+\f6 caller
+\f3 \'bb\'e1\'cf\'c8\'b2\'e9\'d5\'d2
+\f6 TLS
+\f3 \'a3\'ac\'c8\'e7\'b9\'fb\'d5\'d2\'b5\'bd\'c1\'cb\'a3\'ac\'d4\'f2\'bf\'c9\'c4\'dc\'bb\'e1\'b5\'f7\'d3\'c3
+\f6 any retain or release
+\f3 \'b2\'d9\'d7\'f7\'a3\'ac\'c0\'b4\'b1\'a3\'d6\'a4
+\f6 caller
+\f3 \'cb\'f9\'d0\'e8\'d2\'aa\'b5\'c4\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'d6\'b5\'a3\'bb\'b7\'f1\'d4\'f2\'a3\'ba
+\f6 caller
+\f3 \'c8\'cf\'ce\'aa
+\f6 callee
+\f3 \'b5\'c4
+\f6 result
+\f3 \'b5\'c4
+\f6 retain count
+\f3 \'ce\'aa
+\f6  +0
+\f3 \'a3\'ac\'b2\'a2\'bb\'e1\'d6\'b4\'d0\'d0
+\f6 retain
+\f3 \'b2\'d9\'d7\'f7\'a1\'a3\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\fs30 \cf26 \cb19 \kerning1\expnd0\expndtw0 \'d3\'d0
+\f6 2
+\f3 \'b8\'f6
+\f6  
+\f3 \'b1\'bb\'d3\'c5\'bb\'af\'b5\'c4
+\f6  callees:
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_autoreleaseReturnValue
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  result 
+\f3 \'b5\'b1\'c7\'b0\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'ce\'aa
+\f6  + 1
+\f3 \'a3\'ac\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af\'b5\'c4\'bb\'b0\'bb\'e1\'b6\'d4
+\f6 result
+\f3 \'d6\'b4\'d0\'d0
+\f6 autorelease
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_retainAutoreleaseReturnValue
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  result 
+\f3 \'b5\'b1\'c7\'b0\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'ce\'aa
+\f6  + 0
+\f3 \'a3\'ac\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af\'b5\'c4\'bb\'b0\'bb\'e1\'b6\'d4
+\f6 result
+\f3 \'d6\'b4\'d0\'d0
+\f6 retian 
+\f3 \'c8\'bb\'ba\'f3
+\f6  autorelease\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\fs30 \cf26 \cb19 \kerning1\expnd0\expndtw0 \'d3\'d0
+\f6 2
+\f3 \'b8\'f6\'b1\'bb\'d3\'c5\'bb\'af\'b5\'c4
+\f6 callers:
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_retainAutoreleasedReturnValue
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  caller 
+\f3 \'cf\'a3\'cd\'fb
+\f6  result
+\f3 \'b5\'c4
+\f6 retain count 
+\f3 \'ce\'aa
+\f6  +1
+\f3 \'a3\'ac\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af\'b5\'c4\'bb\'b0\'bb\'e1\'b6\'d4
+\f6 result 
+\f3 \'bd\'f8\'d0\'d0
+\f6  retain.
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf26 \cb19  objc_unsafeClaimAutoreleasedReturnValue
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  caller 
+\f3 \'cf\'a3\'cd\'fb
+\f6  result 
+\f3 \'b5\'c4
+\f6  retain count  
+\f3 \'ce\'aa
+\f6  +0
+\f3 \'a3\'ac\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af\'b5\'c4\'bb\'b0\'ca\'b2\'c3\'b4\'d2\'b2\'b2\'bb\'d7\'f6\'a1\'a3\
+\
+\'b1\'ea\'bc\'c7\'d6\'b8\'d5\'eb\'a3\'a8
+\f6 \cf36 \cb19 TaggedPointer
+\f3 \cf26 \cb19 \'a3\'a9\'b5\'c4\'b6\'d4\'cf\'f3\'d4\'da\'d3\'c5\'bb\'af\'b7\'bd\'b0\'b8\'ca\'b1\'a3\'ac\'d2\'b2\'bb\'e1\'b2\'ce\'d3\'eb\'d3\'c5\'bb\'af\'c0\'b4\'bd\'da\'ca\'a1\'cf\'e0\'b9\'d8\'cf\'fb\'cf\'a2\'b5\'c4\'b7\'a2\'cb\'cd\'a1\'a3\'d4\'d9\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2\'a3\'ac\'cb\'fb\'c3\'c7\'b2\'bb\'bb\'e1\'bd\'f8\'c8\'eb
+\f6 autorelease pool.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf26 \cb19 \kerning1\expnd0\expndtw0 id
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_autoreleaseReturnValue(id obj)
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  if (prepareOptimizedReturn(ReturnAtPlus1)) return obj;//
+\f3 \'c8\'e7\'b9\'fb\'bf\'c9\'d2\'d4\'d3\'c5\'bb\'af
+\f6  
+\f3 \'d6\'b1\'bd\'d3
+\f6 return obj
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return objc_autorelease(obj);//
+\f3 \'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
+\f6  objc_autorelease
+\f3 \'a3\'a8
+\f6 obj
+\f3 \'a3\'a9\'a1\'a3\'c4\'da\'b2\'bf\'b5\'f7\'d3\'c3\'a3\'ba
+\f6  obj->autorelease() 
+\f3 \'ca\'b5\'c0\'fd\'b7\'bd\'b7\'a8\'a1\'a3
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // Prepare a value at +0 for return through a +0 autoreleasing convention.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  id
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_retainAutoreleaseReturnValue(id obj)
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  if (prepareOptimizedReturn(ReturnAtPlus0)) return obj;
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // not objc_autoreleaseReturnValue(objc_retain(obj))
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // because we don't need another optimization attempt
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return objc_retainAutoreleaseAndReturn(obj);//
+\f3 \'c4\'da\'b2\'bf\'d7\'ee\'d6\'d5\'b5\'f7\'d3\'c3
+\f6   objc_autorelease(objc_retain(obj));
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // Accept a value returned through a +0 autoreleasing convention for use at +1.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  id
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_retainAutoreleasedReturnValue(id obj)
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  if (acceptOptimizedReturn() == ReturnAtPlus1) return obj;//
+\f3 \'c8\'e7\'b9\'fb\'d3\'c5\'bb\'af\'a3\'ac\'b7\'b5\'bb\'d8
+\f6 obj  \cf16 \cb19 acceptOptimizedReturn 
+\f3 \'b7\'bd\'b7\'a8
+\f6  
+\f3 \'d6\'b1\'bd\'d3\'cb\'cd
+\f6 TLS 
+\f3 \'d6\'d0\'b6\'c1\'c8\'a1
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return objc_retain(obj);//
+\f3 \'b7\'f1\'d4\'f2\'b7\'b5\'bb\'d8
+\f6  objc_retain(obj);
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // Accept a value returned through a +0 autoreleasing convention for use at +0.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  id
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_unsafeClaimAutoreleasedReturnValue(id obj)
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  if (acceptOptimizedReturn() == ReturnAtPlus0) return obj; //
+\f3 \'c8\'e7\'b9\'fb\'d3\'c5\'bb\'af\'a3\'ac\'b7\'b5\'bb\'d8
+\f6 obj \cf16 \cb19 acceptOptimizedReturn 
+\f3 \'b7\'bd\'b7\'a8
+\f6  
+\f3 \'d6\'b1\'bd\'d3\'cb\'cd
+\f6 TLS 
+\f3 \'d6\'d0\'b6\'c1\'c8\'a1
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return objc_releaseAndReturn(obj);//
+\f3 \'c4\'da\'b2\'bf\'b5\'f7\'d3\'c3
+\f6  objc_release(obj);
+\f3 \'bc\'b4\'a3\'ba
+\f6 obj->release();
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f3\fs30 \cf26 \cb19 \'b6\'d4\'d3\'da\'b4\'fa\'c2\'eb\'a3\'ba
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  + (instancetype)createSark \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return [self new];
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // caller
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  Sark *sark = [Sark createSark];
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  
+\f3 \'b1\'e0\'d2\'eb\'ba\'f3\'a3\'ac\'b1\'e0\'d2\'eb\'c6\'f7\'bb\'e1\'b8\'f8\'d7\'aa\'bb\'bb\'b3\'c9\'c8\'e7\'cf\'c2\'b4\'fa\'c2\'eb\'a3\'ba
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  + (instancetype)createSark \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  id tmp = [self new];
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  return objc_autoreleaseReturnValue(tmp); // 
+\f3 \'b4\'fa\'cc\'e6\'ce\'d2\'c3\'c7\'b5\'f7\'d3\'c3
+\f6 autorelease
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  \}
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  // caller
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  id tmp = objc_retainAutoreleasedReturnValue([Sark createSark]) // 
+\f3 \'b4\'fa\'cc\'e6\'ce\'d2\'c3\'c7\'b5\'f7\'d3\'c3
+\f6 retain
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  Sark *sark = tmp;
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19  objc_storeStrong(&sark, nil);\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf6 \
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 \cb19 \kerning1\expnd0\expndtw0 prepareOptimizedReturn
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf26 \cb19 \kerning1\expnd0\expndtw0 /*
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19     
+\f3 \'c5\'d0\'b6\'cf
+\f6 caller
+\f3 \'ca\'c7\'b7\'f1\'d6\'a7\'b3\'d6\'d3\'c5\'bb\'af
+\f6 ,
+\f3 \'c8\'e7\'b9\'fb\'b2\'bb\'d6\'a7\'b3\'d6\'a3\'ac\'c4\'c7\'c3\'b4
+\f6 return value
+\f3 \'b1\'d8\'d0\'eb\'d2\'aa\'bd\'f8\'d0\'d0
+\f6  retained and/or autoreleased
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19     
+\f3 \'d3\'c9\'d3\'da\'ca\'c7
+\f6  ALWAYS_INLINE 
+\f3 \'ba\'af\'ca\'fd\'a3\'ac\'ca\'b5\'bc\'ca
+\f6  __builtin_return_address(0) 
+\f3 \'b2\'a2\'b2\'bb\'ca\'c7
+\f6  prepareOptimizedReturn 
+\f3 \'d7\'d4\'c9\'ed\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b5\'d8\'d6\'b7\'a1\'a3
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19     
+\f3 \'ca\'b5\'bc\'ca\'b5\'f7\'d3\'c3\'b4\'cb\'b7\'bd\'b7\'a8\'b5\'c4\'ca\'c7
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      inline id
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19     objc_object::rootAutorelease()
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f3 \'ba\'af\'ca\'fd\'a3\'ac\'d3\'c9\'d3\'da
+\f6  
+\f3 \'cb\'fc\'d2\'b2\'ca\'c7
+\f6  inline 
+\f3 \'b7\'bd\'b7\'a8\'a3\'ac\'d2\'b2\'bb\'e1\'b1\'bb\'d5\'b9\'bf\'aa\'a3\'ac\'cb\'f9\'d2\'d4
+\f6  __builtin_return_address(0) 
+\f3 \'b4\'fa\'b1\'ed\'b5\'c4
+\f6  
+\f3 \'ca\'c7\'b5\'f7\'d3\'c3
+\f6  objc_object::rootAutorelease() 
+\f3 \'b5\'c4\'c4\'c7\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b5\'d8\'d6\'b7\'a3\'ac\'d2\'b2\'be\'cd\'ca\'c7
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      - (id)autorelease \{
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      return ((id)self)->rootAutorelease();
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      \}
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf26 \cb19     NSObjet
+\f3 \'b5\'c4
+\f6  
+\f3 \'ca\'b5\'c0\'fd\'b7\'bd\'b7\'a8\'a3\'ba
+\f6 autorelease
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f3 \'c4\'c7\'c3\'b4\'b6\'d4\'d3\'a6\'b5\'c4
+\f6 caller 
+\f3 \'d2\'b2\'be\'cd\'ca\'c7\'b5\'f7\'d3\'c3
+\f6  
+\f3 \'c9\'cf\'c3\'e6\'c1\'bd\'b8\'f6\'b7\'bd\'b7\'a8\'a3\'ac\'c7\'d2\'b2\'bb\'ca\'c7\'d6\'b1\'bd\'d3
+\f6 return 
+\f3 \'b5\'c4\'b7\'bd\'b7\'a8\'a1\'a3
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f3 \'c0\'fd\'c8\'e7\'a3\'ba
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      id a = [b autorelease];
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19      */
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 static\cf16 \cb19  \cf14 \cb19 ALWAYS_INLINE\cf16 \cb19  \cf17 \cb19 bool\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 prepareOptimizedReturn(\cf35 ReturnDisposition\cf16  disposition)
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf14 \cb19 assert\cf16 \cb19 (\cf36 \cb19 getReturnDisposition\cf16 \cb19 () == \cf36 \cb19 ReturnAtPlus0\cf16 \cb19 );\cf26 \cb19 //
+\f3 \'b5\'b1\'c7\'b0\'ce\'aa\'c3\'bb\'d3\'d0\'d3\'c5\'bb\'af
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 callerAcceptsOptimizedReturn\cf16 \cb19 (\cf36 \cb19 __builtin_return_address\cf16 \cb19 (\cf21 \cb19 0\cf16 \cb19 ))) \{
+\f3 //
+\f6 \cf26 \cb19 //
+\f3 \'c5\'d0\'b6\'cf
+\f6 caller
+\f3 \'c4\'dc\'b7\'f1\'bd\'d3\'ca\'d5\'d3\'c5\'bb\'af\'b5\'c4
+\f6 return
+\f3 \'a3\'ac\'b2\'ce\'ca\'fd\'ca\'b5\'bc\'ca\'ce\'aa
+\f6  __builtin_return_address(0)
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         \cf17 \cb19 if\cf16 \cb19  (disposition) \cf36 \cb19 setReturnDisposition\cf16 \cb19 (disposition);
+\f3 //\'d0\'b4\'c8\'eb\'b5\'bd TLS \'c4\'da\'a1\'a3caller\'bf\'c9\'d2\'d4\'cd\'a8\'b9\'fd
+\f6 acceptOptimizedReturn
+\f3 \'b7\'bd\'b7\'a8\'d6\'b1\'bd\'d3\'b4\'d3TLS\'c4\'da\'b6\'c1\'c8\'a1\'b5\'bd\'a1\'a3
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 return\cf16 \cb19  \cf17 \cb19 true\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf17 \cb19 false\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+ \cf26 \cb19 //
+\f3 \'b6\'d4\'d3\'da
+\f6  char *__builtin_return_address(int level)
+\f3 \'a3\'ba
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16     \cf26 \cb19 //
+\f3 \'d5\'e2\'b8\'f6\'c4\'da\'bd\'a8\'ba\'af\'ca\'fd\'d7\'f7\'d3\'c3\'ca\'c7\'b5\'c3\'b5\'bd\'ba\'af\'ca\'fd\'b5\'c4\'b7\'b5\'bb\'d8\'b5\'d8\'d6\'b7\'a3\'ac\'b2\'ce\'ca\'fd\'b1\'ed\'ca\'be\'b2\'e3\'ca\'fd\'a3\'ac\'c8\'e7
+\f6 __builtin_return_address(0)
+\f3 \'b1\'ed\'ca\'be\'b5\'b1\'c7\'b0\'ba\'af\'ca\'fd\'cc\'e5\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'c4\'b5\'d8\'d6\'b7\'a3\'ac\'b4\'ab
+\f6 1
+\f3 \'ca\'c7\'b5\'f7\'d3\'c3\'d5\'e2\'b8\'f6\'ba\'af\'ca\'fd\'b5\'c4\'cd\'e2\'b2\'e3\'ba\'af\'ca\'fd\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5\'b5\'d8\'d6\'b7\'a3\'ac\'d2\'d4\'b4\'cb\'c0\'e0\'cd\'c6\'a1\'a3\
+
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16 \
 \
 \
 \
-////////\
+
+\f3 ///////\'b9\'d8\'d3\'da retain\'a1\'a2release\'a1\'a2retainCount\'a1\'a2weak\'a1\'a2strong\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::rootRetain()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19  (\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 sidetable_retain\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}
+\f3 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf17 \cb19 inline\cf16 \cb19  \cf20 \cb19 uintptr_t\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::rootRetainCount()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19  (\cf20 \cb19 uintptr_t\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 sidetable_retainCount\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 bool\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::rootRelease()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19  \cf17 \cb19 false\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 sidetable_release\cf16 \cb19 (\cf17 \cb19 true\cf16 \cb19 );
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::retain()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf14 \cb19 assert\cf16 \cb19 (!\cf36 \cb19 isTaggedPointer\cf16 \cb19 ());
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf14 \cb19 fastpath\cf16 \cb19 (!\cf36 \cb19 ISA\cf16 \cb19 ()->\cf36 \cb19 hasCustomRR\cf16 \cb19 ())) \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 return\cf16 \cb19  \cf36 \cb19 sidetable_retain\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  ((\cf17 \cb19 id\cf16 \cb19 (*)(\cf35 objc_object\cf16  *, \cf17 \cb19 SEL\cf16 \cb19 ))\cf18 objc_msgSend\cf16 )(\cf17 \cb19 this\cf16 \cb19 , \cf35 SEL_retain\cf16 );
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 void
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::release()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf14 \cb19 assert\cf16 \cb19 (!\cf36 \cb19 isTaggedPointer\cf16 \cb19 ());
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf14 \cb19 fastpath\cf16 \cb19 (!\cf36 \cb19 ISA\cf16 \cb19 ()->\cf36 \cb19 hasCustomRR\cf16 \cb19 ())) \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf36 \cb19 sidetable_release\cf16 \cb19 ();//
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 return\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     ((\cf17 \cb19 void\cf16 \cb19 (*)(\cf35 objc_object\cf16  *, \cf17 \cb19 SEL\cf16 \cb19 ))\cf18 objc_msgSend\cf16 )(\cf17 \cb19 this\cf16 \cb19 , \cf35 SEL_release\cf16 );
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\
+
+\f3 \'ca\'b5\'bc\'ca\'d7\'ee\'d6\'d5\'b6\'bc\'ca\'c7\'b5\'f7\'d3\'c3\'b5\'c4
+\f6  \cf36 \cb19 sidetable_retain() 
+\f3 \'bb\'f2\'d5\'df
+\f6  sidetable_release()\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 id
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::sidetable_retain()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf14 \cb19 #if SUPPORT_NONPOINTER_ISA
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     assert(!isa.nonpointer);
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf14 \cb19 #endif
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf35 SideTable\cf16 & table = \cf36 \cb19 SideTables\cf16 \cb19 ()[\cf17 \cb19 this\cf16 \cb19 ];
+\f3 //\'b8\'f9\'be\'ddthis\'b5\'d8\'d6\'b7\'bb\'f1\'c8\'a1\'b5\'bd\'c6\'e4\'b6\'d4\'d3\'a6\'b5\'c4SideTable\'a3\'ac\'d3\'c9\'d3\'da\'c8\'ab\'be\'d6\'b5\'c4 SideTable \'b8\'f6\'ca\'fd\'d3\'d0\'cf\'de\'a3\'ac\'cb\'f9\'d2\'d4\'bf\'c9\'c4\'dc\'bb\'e1\'b4\'e6\'d4\'da\'b3\'e5\'cd\'bb\'b5\'c4\'ce\'ca\'cc\'e2\'a3\'ac\'bc\'b4\'b6\'e0\'b8\'f6\'c4\'da\'b4\'e6\'b5\'d8\'d6\'b7\'a3\'ac\'b6\'d4\'d3\'a6\'b5\'bd\'d2\'bb\'b8\'f6 SideTable\'a1\'a3\'cb\'f9\'d2\'d4SideTable \'c4\'da\'b2\'bf \'ce\'ac\'bb\'a4\'c1\'cb\'d2\'bb\'b8\'f6
+\f6 \cf35 RefcountMap
+\f3 \cf16 \'c0\'b4\'bd\'f8\'d0\'d0\'be\'ab\'c8\'b7\'c7\'f8\'b7\'d6\'a1\'a3
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     table.\cf36 \cb19 lock\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf20 \cb19 size_t\cf16 \cb19 & refcntStorage = table.refcnts[\cf17 \cb19 this\cf16 \cb19 ];//
+\f3 \'d6\'ae\'c7\'b0\'b4\'e6\'b4\'a2\'b5\'c4
+\f6  retainCount
+\f3 \'a1\'a3\'bf\'c9\'d2\'d4\'bf\'b4\'b3\'f6\'b4\'e6\'b4\'a2\'ca\'c7\'d4\'d9
+\f6 table.refcnts
+\f3 \'c4\'da
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (! (refcntStorage & \cf14 \cb19 SIDE_TABLE_RC_PINNED\cf16 \cb19 )) \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         refcntStorage += \cf14 \cb19 SIDE_TABLE_RC_ONE\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     table.\cf36 \cb19 unlock\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  (\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf20 \cb19 uintptr_t
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::sidetable_release(\cf17 \cb19 bool\cf16 \cb19  performDealloc = \cf17 \cb19 true\cf16 \cb19 );
+\f3 \'c4\'da\'b2\'bf\'b5\'f7\'d5\'fb
+\f6 table.refcnts
+\f3 \'b5\'c4\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'a3\'ac\'b2\'a2\'bf\'c9\'c4\'dc\'bb\'e1\'b5\'f7\'d3\'c3dealloc\
+\
+
+\f6 \
+//\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 static\cf16 \cb19  \cf35 StripedMap\cf16 <\cf35 SideTable\cf16 >& SideTables() \{
+\f3 //\'c8\'ab\'be\'d6\'b5\'c4\'be\'b2\'cc\'ac\'b5\'c4 StripedMap\'a3\'ac\'c6\'e4\'d4\'aa\'cb\'d8\'ca\'c7SideTable
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  *\cf17 \cb19 reinterpret_cast\cf16 \cb19 <StripedMap<SideTable>*>(SideTableBuf);
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+
+\f3 \'b6\'f8
+\f6  SideTableBuf 
+\f3 \'ca\'c7
+\f6 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf16 \cb19 \ulth \ulc16 a\ulnone lignas(StripedMap<SideTable>)\ulth  \cf17 \ulnone static\cf16  uint8_t 
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     SideTableBuf[\cf17 sizeof\cf16 (StripedMap<SideTable>)];//
+\f3 \'b8\'f6\'ca\'fd\'d3\'d0\'cf\'de\'b5\'c4\'d2\'bb\'b8\'f6\'ca\'fd\'d7\'e9
+\f6 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 static\cf16 \cb19  \cf17 \cb19 void\cf16 \cb19  SideTableInit() \{//
+\f3 \'d3\'c3\'c0\'b4\'b3\'f5\'ca\'bc\'bb\'af\'c9\'a2\'c1\'d0\'b1\'ed\'b5\'c4\'b7\'bd\'b7\'a8\'a1\'a3\'a1\'a3\'a3\'bf\'d4\'daobjc-os.mm\'d6\'d0 \'d3\'c9 
+\f6  \cf36 \cb19 arr_init\cf16 \cb19 ();\cf26 \cb19 //
+\f3 \'b3\'f5\'ca\'bc\'bb\'af\'d7\'d4\'b6\'af\'ca\'cd\'b7\'c5\'b3\'d8
+\f6 +
+\f3 \'c9\'a2\'c1\'d0\'b1\'ed\'b5\'f7\'d3\'c3
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf17 \cb19 new\cf16 \cb19  (SideTableBuf) StripedMap<SideTable>();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf26 \cb19 \kerning1\expnd0\expndtw0  StripedMap<T> 
+\f3 \'ca\'c7\'b8\'f6
+\f6  void* -> T 
+\f3 \'b5\'c4map\'a3\'ac\'d3\'c3\'c0\'b4\'d2\'d4\'ca\'ca\'b5\'b1\'b5\'c4\'b4\'f3\'d0\'a1\'a3\'ac\'c0\'b4\'b4\'e6\'b7\'c5\'b4\'f8\'cb\'f8\'b5\'c4\'bb\'ba\'b4\'e6\'a3\'a8
+\f6 sized appropriately for cache-friendly lock striping
+\f3 \'a3\'a9\'a1\'a3\'a3\'bf\'ca\'b9\'d3\'c3\'b7\'bd\'ca\'bd\'bf\'c9\'c4\'dc\'ce\'aa \'a3\'ba
+\f6 StripedMap<spinlock_t> 
+\f3 \'bb\'f2\'d5\'df
+\f6  StripedMap<SomeStruct>
+\f3 ,
+\f6 SomeStruct 
+\f3 \'c4\'da\'ba\'ac\'d3\'d0
+\f6 spin lock
+\f3 \'a3\'a8\'d3\'c3\'c0\'b4\'d6\'a7\'b3\'d6spin lock \'b5\'c4\'bb\'f9\'b1\'be\'c9\'cf\'cb\'f8\'a1\'a2\'bd\'e2\'cb\'f8\'b2\'d9\'d7\'f7\'a3\'a9
+\f6 .\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 struct\cf16 \cb19  SideTable \{
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf35 spinlock_t\cf16  slock;//
+\f3 \'cb\'f8
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf35 RefcountMap\cf16  refcnts;// \cf17 \cb19 typedef\cf16 \cb19  \cf35 objc\cf16 ::\cf35 DenseMap\cf16 <\cf35 DisguisedPtr\cf16 <\cf35 objc_object\cf16 >,\cf20 \cb19 size_t\cf16 \cb19 ,\cf17 \cb19 true\cf16 \cb19 > RefcountMap;
+\f3 \'d3\'c9\'d3\'da\'c8\'ab\'be\'d6\'b5\'c4 SideTable \'b8\'f6\'ca\'fd\'d3\'d0\'cf\'de\'a3\'ac\'cb\'f9\'d2\'d4\'bf\'c9\'c4\'dc\'bb\'e1\'b4\'e6\'d4\'da\'b3\'e5\'cd\'bb\'b5\'c4\'ce\'ca\'cc\'e2\'a3\'ac\'bc\'b4\'b6\'e0\'b8\'f6\'c4\'da\'b4\'e6\'b5\'d8\'d6\'b7\'a3\'ac\'b6\'d4\'d3\'a6\'b5\'bd\'d2\'bb\'b8\'f6 SideTable\'a1\'a3\'cb\'f9\'d2\'d4SideTable \'c4\'da\'b2\'bf \'ce\'ac\'bb\'a4\'c1\'cb\'d2\'bb\'b8\'f6
+\f6 \cf35 RefcountMap
+\f3 \cf16 \'c0\'b4\'bd\'f8\'d0\'d0\'be\'ab\'c8\'b7\'c7\'f8\'b7\'d6\'a1\'a3\'ca\'b5\'bc\'ca\'b4\'e6\'b4\'a2\'c4\'b3\'b8\'f6obj\'b5\'c4\'d2\'fd\'d3\'c3\'bc\'c6\'ca\'fd\'b5\'c4\'a3\'ac\'ca\'c7refcnts.
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf16 \cb19 \ulth \ulc16 w\cf16 \cb19 \ulnone eak_table_t weak_table;\cf26 \cb19 //
+\f3 \cf16 \cb19 \'b4\'e6\'b4\'a2\'c8\'f5\'d2\'fd\'d3\'c3\'b5\'c4table,\cf26 \cb19 \'b5\'b1\'d2\'bb\'b8\'f6\'b6\'d4\'cf\'f3\'ca\'cd\'b7\'c5\'ca\'b1\'ba\'f2\'a3\'ac\'bb\'e1\'b4\'d3\'b9\'fe\'cf\'a3\'b1\'ed\'b8\'f9\'be\'dd\'b4\'cb\'b6\'d4\'cf\'f3\'b5\'d8\'d6\'b7\'b2\'e9\'d1\'af\'b5\'bd\'cb\'f9\'d3\'d0\'c4\'c7\'d0\'a9
+\f6 __weak
+\f3 \'b5\'c4\'b1\'e4\'c1\'bf\'b5\'c4\'b5\'d8\'d6\'b7\'a3\'ac\'cb\'f9\'d2\'d4\'bf\'c9\'d2\'d4\'b0\'d1
+\f6 __weak
+\f3 \'b1\'e4\'c1\'bf\'c9\'e8\'d6\'c3\'ce\'aa
+\f6 nil
+\f3 \'a1\'a3
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf16     SideTable() \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         memset(&weak_table, \cf21 \cb19 0\cf16 \cb19 , \cf17 \cb19 sizeof\cf16 \cb19 (weak_table));
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}\
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 struct\cf16 \cb19  weak_table_t \{
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf35 weak_entry_t\cf16  *weak_entries;\cf26 \cb19 //
+\f3 \'b4\'e6\'b4\'a2\'c8\'f5\'d2\'fd\'d3\'c3\'cf\'e0\'b9\'d8
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16     \cf20 \cb19 size_t\cf16 \cb19     num_entries;\cf26 \cb19 //
+\f3 \'b8\'f6\'ca\'fd
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16     \cf20 \cb19 uintptr_t\cf16 \cb19  mask;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf20 \cb19 uintptr_t\cf16 \cb19  max_hash_displacement;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \};\
+
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 typedef\cf16 \cb19  \cf35 DisguisedPtr\cf16 <\cf35 objc_object\cf16  *> weak_referrer_t;                    \cf26 \cb19 //The address of a __weak variable\'85
+\f3 \'d6\'b8\'cf\'f2\'c8\'f5\'d2\'fd\'d3\'c3\'b6\'d4\'cf\'f3\'d6\'b8\'d5\'eb\'b5\'c4\'d6\'b8\'d5\'eb\
+\
+
+\f6 \cf17 \cb19 struct\cf16 \cb19  weak_entry_t \{
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16     \cf35 DisguisedPtr\cf16 <\cf35 objc_object\cf16 > referent;\cf26 \cb19 //
+\f3 \'b1\'bb\'c8\'f5\'d2\'fd\'d3\'c3\'b5\'c4\'b6\'d4\'cf\'f3
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16     \cf17 \cb19 union\cf16 \cb19  \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 struct\cf16 \cb19  \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16             \cf35 weak_referrer_t\cf16  *referrers;\cf26 \cb19 //
+\f15\fs32 \cf68 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec68 \'bf\'c9\'b1\'e4\'ca\'fd\'d7\'e9,\'c0\'ef\'c3\'e6\'b1\'a3\'b4\'e6\'d7\'c5\'cb\'f9\'d3\'d0\'d6\'b8\'cf\'f2\'d5\'e2\'b8\'f6\'b6\'d4\'cf\'f3\'b5\'c4\'c8\'f5\'d2\'fd\'d3\'c3\'b5\'c4\'b5\'d8\'d6\'b7
+\f10\fs24 \cf0 \cb19 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f6\fs30 \cf16             \cf20 \cb19 uintptr_t\cf16 \cb19         out_of_line_ness : \cf21 \cb19 2\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16             \cf20 \cb19 uintptr_t\cf16 \cb19         num_refs : \cf14 \cb19 PTR_MINUS_2\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16             \cf20 \cb19 uintptr_t\cf16 \cb19         mask;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16             \cf20 \cb19 uintptr_t\cf16 \cb19         max_hash_displacement;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \};
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 struct\cf16 \cb19  \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16             \cf26 \cb19 // out_of_line_ness field is low bits of inline_referrers[1]
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16             \cf35 weak_referrer_t\cf16   inline_referrers[\cf14 \cb19 WEAK_INLINE_COUNT\cf16 \cb19 ];\cf26 \cb19 //
+\f3 \'c4\'ac\'c8\'cf\'ca\'c7
+\f6 4
+\f3 \'b8\'f6\'a3\'bf
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         \};
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \};
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs30 \cf26 \cb19 \
+
+\f6 /// Adds an (object, weak pointer) pair to the weak table.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf26 \cb19 //
+\f3 \'cc\'ed\'bc\'d3\'a3\'a8
+\f6 object, weak pointer
+\f3 \'a3\'a9
+\f6 pair
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 id\cf16 \cb19  weak_register_no_lock(weak_table_t *weak_table, \cf17 \cb19 id\cf16 \cb19  referent, 
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16                          \cf17 \cb19 id\cf16 \cb19  *referrer, \cf17 \cb19 bool\cf16 \cb19  crashIfDeallocating);
+\f10\fs24 \cf0 \
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf26 \cb19 /// Removes an (object, weak pointer) pair from the weak table.
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 void\cf16 \cb19  weak_unregister_no_lock(weak_table_t *weak_table, \cf17 \cb19 id\cf16 \cb19  referent, \cf17 \cb19 id\cf16 \cb19  *referrer);
+\f10\fs24 \cf0 \
+\
+\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf26 \cb19 /// Called on object destruction. Sets all remaining weak pointers to nil.
+\f10\fs24 \cf0 \cb19 \
+\
+
+\f6\fs30 \cf26 \cb19 //
+\f3 \'b5\'b1\'b6\'d4\'cf\'f3\'ca\'cd\'b7\'c5\'ca\'b1\'ba\'f2\'b5\'f7\'d3\'c3\'b4\'cb\'b7\'bd\'b7\'a8\'a3\'ac\'d6\'c3\'c4\'c7\'d0\'a9
+\f6 __weak
+\f3 \'b5\'c4\'b6\'d4\'cf\'f3\'ce\'aa
+\f6 nil
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 void\cf16 \cb19  weak_clear_no_lock(weak_table_t *weak_table, \cf17 \cb19 id\cf16 \cb19  referent);
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3\fs30 \cf26 \cb19 \
+//\
+\'b5\'b1\'b5\'f7\'d3\'c3 __weak obj2  = obj1;\'ca\'b1\'ba\'f2\'a3\'ac\'bb\'e1\'b5\'f7\'d3\'c3\'b4\'cb\'b7\'bd\'b7\'a8\'a3\'ba\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf17 \cb19 id
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 objc_storeWeak(\cf17 \cb19 id\cf16 \cb19  *location, \cf17 \cb19 id\cf16 \cb19  newObj)
+\f3 \'a1\'a3\'c4\'da\'b2\'bf\'ca\'b5\'bc\'ca\'b5\'f7\'d3\'c3\'cf\'c2\'c3\'e6\'b5\'c4\'b7\'bd\'b7\'a8\cf26 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf17 \cb19 \
+template\cf16 \cb19  <\cf35 HaveOld\cf16  haveOld, \cf35 HaveNew\cf16  haveNew,
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16           \cf35 CrashIfDeallocating\cf16  crashIfDeallocating>
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 static\cf16 \cb19  \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 storeWeak(\cf17 \cb19 id\cf16 \cb19  *location, \cf35 objc_object\cf16  *newObj);
+\f3 //\'c4\'da\'b2\'bf\'b5\'f7\'d3\'c3\'c9\'cf\'c3\'e6\'b5\'c4register\'a1\'a2unregister\'b7\'bd\'b7\'a8\'c0\'b4\'b5\'f7\'d5\'fb\'c8\'f5\'d2\'fd\'d3\'c3\'a1\'a3\'cf\'f2
+\f6 newObj 
+\f3 \'b5\'c4\'b5\'c4
+\f6 SideTable
+\f3 \'d6\'d0\'d7\'a2\'b2\'e1\'c8\'f5\'d2\'fd\'d3\'c3\'a3\'ac\'b7\'b5\'bb\'d8newObj\'a1\'a3\cf26 \cb19 \
+\
+\
+\'b5\'b1\'d2\'bb\'b8\'f6obj \'ca\'cd\'b7\'c5\'a3\'a8dealloc\'a3\'a9\'ca\'b1\'a3\'ac\'b5\'f7\'d3\'c3 
+\f6 \cf16 \cb19 rootDealloc
+\f3 \cf26 \cb19 \
+//\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 void
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::rootDealloc()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (\cf36 \cb19 isTaggedPointer\cf16 \cb19 ()) \cf17 \cb19 return\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     object_dispose((\cf17 \cb19 id\cf16 \cb19 )\cf17 \cb19 this\cf16 \cb19 );//
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3 \cf26 \cb19 \
+
+\f6 //
+\f3 \'ce\'f6\'b9\'b9\'b2\'a2\'ca\'cd\'b7\'c5\'c4\'da\'b4\'e6
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 id\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 object_dispose(\cf17 \cb19 id\cf16 \cb19  obj)
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (!obj) \cf17 \cb19 return\cf16 \cb19  \cf17 \cb19 nil\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf36 \cb19 objc_destructInstance\cf16 \cb19 (obj); //
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf18 free\cf16 (obj);//
+\f3 \'ca\'cd\'b7\'c5\'c4\'da\'b4\'e6
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  \cf17 \cb19 nil\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf26 \cb19 //
+\f3 \'b5\'f7\'d3\'c3\'ce\'f6\'b9\'b9\'b7\'bd\'b7\'a8
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 void\cf16 \cb19  *objc_destructInstance(\cf17 \cb19 id\cf16 \cb19  obj) 
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (obj) \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf26 \cb19 // Read all of the flags at once for performance.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         \cf17 \cb19 bool\cf16 \cb19  cxx = obj->\cf36 \cb19 hasCxxDtor\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 bool\cf16 \cb19  assoc = obj->\cf36 \cb19 hasAssociatedObjects\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16         \cf26 \cb19 // This order is important.
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         \cf17 \cb19 if\cf16 \cb19  (cxx) \cf36 \cb19 object_cxxDestruct\cf16 \cb19 (obj);\cf26 \cb19 //
+\f3 \'ce\'f6\'b9\'b9
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         \cf17 \cb19 if\cf16 \cb19  (assoc) \cf36 \cb19 _object_remove_assocations\cf16 \cb19 (obj);\cf26 \cb19 //
+\f3 \'d2\'c6\'b3\'fd\'b9\'d8\'c1\'aa\'b1\'e4\'c1\'bf
+\f10\fs24 \cf0 \cb19 \
+
+\f6\fs30 \cf16         obj->\cf36 \cb19 clearDeallocating\cf16 \cb19 ();
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+\
+
+\f6\fs30 \cf16     \cf17 \cb19 return\cf16 \cb19  obj;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf17 \cb19 inline\cf16 \cb19  \cf17 \cb19 void\cf16 \cb19  
+\f10\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf35 objc_object\cf16 ::clearDeallocating()
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf36 \cb19 sidetable_clearDeallocating\cf16 \cb19 ();/
+\f3 /
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f3 \cf26 \cb19 \
+NSObject \'b5\'c4 
+\f6 \cf35 \cb19 objc_object\cf16 ::\cf36 \cb19 sidetable_clearDeallocating\cf16 \cb19 ()
+\f3 \'b7\'bd\'b7\'a8\'ba\'cd
+\f6 objc_object::clearDeallocating_slow()
+\f3 \'b7\'bd\'b7\'a8\'a3\'ac\'b6\'bc\'bb\'e1\'b5\'f7\'d3\'c3\cf26 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6 \cf16 \cb19 weak_clear_no_lock 
+\f3 \'b7\'bd\'b7\'a8\'a3\'ac\'c0\'b4\'bd\'ab\'cb\'f9\'d3\'d0 __weak\'b6\'d4\'cf\'f3\'c9\'e8\'d6\'c3\'ce\'aanil.\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+\cf26 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf6 ////////\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf17 \cb19 \kerning1\expnd0\expndtw0 void
+\f10\fs24 \cf0 \cb19 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f6\fs30 \cf16 objc_storeStrong(\cf17 \cb19 id\cf16 \cb19  *location, \cf17 \cb19 id\cf16 \cb19  obj)
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 id\cf16 \cb19  prev = *location;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf17 \cb19 if\cf16 \cb19  (obj == prev) \{
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16         \cf17 \cb19 return\cf16 \cb19 ;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \}
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf36 \cb19 objc_retain\cf16 \cb19 (obj);
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     *location = obj;
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16     \cf36 \cb19 objc_release\cf16 \cb19 (prev);
+\f10\fs24 \cf0 \
+
+\f6\fs30 \cf16 \}
+\f3\fs24 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf6 \
+\
+\
+\
+\
 \'b6\'d4block\'bd\'f8\'d0\'d0retain \'ca\'b5\'bc\'ca\'ca\'c7\'b5\'f7\'d3\'c3\'b5\'c4 _Block_copy\
 \pard\tx310\pardeftab310\pardirnatural\partightenfactor0
 
@@ -6837,6 +8077,10 @@ page->\cf36 releaseUntil\cf16 (stop);\cf26 //
 \f3 \cf6 \cb1 \expnd0\expndtw0\kerning0
 \
 \
+///\
+\
+\
+//\
 \
 \
 \pard\pardeftab720\sl280\sa240\partightenfactor0
