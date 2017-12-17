@@ -478,14 +478,20 @@ timeToDoWork--;\
 
 \f7\fs26 \cf18 \}\
 \
-\
+\cf17 static\cf18  \cf20 SyncData\cf18 * id2data(\cf17 id\cf18  object, \cf17 enum\cf18  \cf20 usage\cf18  why);//
+\f3 \'b7\'bd\'b7\'a8\'c4\'da\'b2\'bf
+\f7  
+\f3 \'b2\'a2\'c3\'bb\'d3\'d0\'cb\'b5\'ca\'b9\'d3\'c3
+\f7 @try @catch..?\
+\pard\pardeftab720\sl440\sa94\partightenfactor0
 
 \f4 \cf6 \cb3 \expnd0\expndtw0\kerning0
 \
-\pard\pardeftab720\sl300\partightenfactor0
+\pard\pardeftab720\sl440\sa94\partightenfactor0
 \cf6 \
+\pard\pardeftab720\sl300\partightenfactor0
 
-\f1 \'b5\'dd\'b9\'e9\'cb\'f8\'c3\'bf\'cb\'f8\'d2\'bb\'b4\'ce\'d4\'f6\'bc\'d3\'d2\'bb\'b4\'ce\'bc\'c6\'ca\'fd\'a3\'ac\'c3\'bf\'bd\'e2\'cb\'f8\'d2\'bb\'b4\'ce\'bc\'f5\'c9\'d9\'d2\'bb\'b4\'ce\'bc\'c6\'ca\'fd\'a3\'ac\'d0\'e8\'d2\'aa\'b6\'d4\'b3\'c6\'c6\'a5\'c5\'e4\'ba\'f3\'b2\'c5\'c4\'dc\'c8\'c3\'c6\'e4\'cb\'fb\'cf\'df\'b3\'cc\'bb\'f1\'b5\'c3\'cb\'f8\'a1\'a3\
+\f1 \cf6 \'b5\'dd\'b9\'e9\'cb\'f8\'c3\'bf\'cb\'f8\'d2\'bb\'b4\'ce\'d4\'f6\'bc\'d3\'d2\'bb\'b4\'ce\'bc\'c6\'ca\'fd\'a3\'ac\'c3\'bf\'bd\'e2\'cb\'f8\'d2\'bb\'b4\'ce\'bc\'f5\'c9\'d9\'d2\'bb\'b4\'ce\'bc\'c6\'ca\'fd\'a3\'ac\'d0\'e8\'d2\'aa\'b6\'d4\'b3\'c6\'c6\'a5\'c5\'e4\'ba\'f3\'b2\'c5\'c4\'dc\'c8\'c3\'c6\'e4\'cb\'fb\'cf\'df\'b3\'cc\'bb\'f1\'b5\'c3\'cb\'f8\'a1\'a3\
 \
 
 \f2\fs26\fsmilli13390 \cf4 NSConditionLock 
@@ -546,8 +552,19 @@ cocoa framework
 \f1\fs26 \cf6 \ulnone \'b7\'bd\'b7\'a8\'a3\'ac\'bb\'f2\'d5\'df\'ca\'c7posix\'b5\'c4
 \f2\fs26\fsmilli13390 \cf4 pthread_setspecific 
 \f1 \'ba\'cd
-\f2  pthread_getspecific\
+\f2  pthread_getspecific
+\f1 .
+\f2 \
 \
+\pard\pardeftab720\sl440\sa94\partightenfactor0
+
+\f4\fs37\fsmilli18850 \cf6 LINUX 
+\f1 \'cf\'df\'b3\'cc\'c4\'a3\'d0\'cd\'a3\'ba {\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/tianyue168/article/details/7403693"}}{\fldrslt 
+\f4\fs26 \cf6 \cb3 http://blog.csdn.net/tianyue168/article/details/7403693}}
+\f4\fs26  .
+\f2\fs26\fsmilli13390 \cf4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \
 
 \f1 \'b5\'b1\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'bd\'e1\'ca\'f8\'ca\'b1\'a3\'ac
 \f4\fs26 \cf6 \cb23 detached threads 
