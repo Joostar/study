@@ -295,6 +295,8 @@ timeToDoWork--;\
 \f1 \'ba\'cd
 \f6  unlock 
 \f1 \'c5\'e4\'ba\'cf\'ca\'b9\'d3\'c3\'a1\'a3
+\f6 lockWhenCondition:
+\f1 \'c8\'e7\'b9\'fb\'cc\'f5\'bc\'fe\'c2\'fa\'d7\'e3\'a3\'ac\'c4\'c7\'c3\'b4\'cb\'f8\'b6\'a8\'b3\'c9\'b9\'a6\'a3\'ac\'bc\'cc\'d0\'f8\'d6\'b4\'d0\'d0\'a3\'ac\'b7\'f1\'d4\'f2\'a3\'ac\'cf\'df\'b3\'cc\'b1\'bb\'d7\'e8\'c8\'fb\'d6\'b1\'b5\'bd\'cc\'f5\'bc\'fe\'c2\'fa\'d7\'e3\'bb\'f1\'c8\'a1\'b5\'bd\'cb\'f8\'a1\'a3
 \f6 \
 \pard\pardeftab720\sl320\partightenfactor0
 \cf12 \
@@ -741,7 +743,7 @@ sizeof(void *) = 8\
 
 \f1 ////\
 \'d2\'d1\'be\'ad start\'c1\'cb\'b5\'c4thread,\'be\'cd\'cb\'e3\'c3\'bb\'d3\'d0\'c7\'bf\'d2\'fd\'d3\'c3\'b3\'d6\'d3\'d0\'b4\'cbthread\'b6\'d4\'cf\'f3\'a3\'ac\'d2\'b2\'b2\'bb\'bb\'e1\'ca\'cd\'b7\'c5\'a1\'a3\'d0\'e8\'d2\'aa\'b5\'c8\'b4\'fd\'c6\'e4mian\'ba\'af\'ca\'fd\'d6\'b4\'d0\'d0\'cd\'ea\'ba\'f3\'a3\'ac\'b2\'c5\'bb\'e1\'ca\'cd\'b7\'c5\'a1\'a3\'d4\'damain\'ba\'af\'ca\'fd\'d6\'d0\'bf\'aa\'c6\'f4\'c1\'cbrunloop\'b5\'c4thread\'a3\'ac\'d4\'darunloop\'cd\'a3\'d6\'b9\'d2\'d4\'ba\'f3\'b2\'c5\'bf\'c9\'c4\'dc\'bb\'e1\'ca\'cd\'b7\'c5\'a1\'a3\
-\'b6\'d4\'d3\'da\'d4\'damian\'d6\'d0\'d6\'b4\'d0\'d0
+\'b6\'d4\'d3\'da\'d4\'da\'cf\'df\'b3\'cc\'b5\'c4mian\'b7\'bd\'b7\'a8\'d6\'d0\'d6\'b4\'d0\'d0
 \f7\b0\fs30 \cf24 \cb16 \CocoaLigature1 CFRunLoopRunInMode\cf18 (\cf25 kCFRunLoopDefaultMode\cf18 , \cf26 2\cf18 , \cf17 YES\cf18 );
 \f1\b\fs22 \cb1 \CocoaLigature0 \'d3\'ef\'be\'e4\'ca\'b1\'a3\'ac\'d6\'bb\'d3\'d0\'b4\'cb\'ba\'af\'ca\'fd\'b7\'b5\'bb\'d8\'ba\'f3main\'b2\'c5\'d6\'b4\'d0\'d0\'cf\'c2\'d2\'bb\'cc\'f5\'d3\'ef\'be\'e4\'a1\'a3\
 \
@@ -1696,6 +1698,19 @@ NS_OPTIONS(_type,_name) 2\'b8\'f6\'b2\'ce\'ca\'fd\'a1\'a3\'d3\'c3\'d3\'da\'b6\'a
 \f3 \cf18 \'bd\'e1\'b9\'b9\'cc\'e5\'d6\'d0\'a1\'a3
 \f9\b\fs22 \cb1 \CocoaLigature0 \
 \
+ \
+RAC 
+\f7\b0\fs28 \cf18 \cb16 \CocoaLigature1 rac_signalForSelector 
+\f3 \'b7\'bd\'b7\'a8\'bb\'b9\'d6\'a7\'b3\'d6\'b4\'f8\'d0\'ad\'d2\'e9\'b0\'e6\'b1\'be\'b5\'c4 
+\f7\fs26 \cf18 \cb16 - (\cf20 RACSignal\cf18  *)rac_signalForSelector:(\cf17 SEL\cf18 )selector fromProtocol:(\cf20 Protocol\cf18  *)protocol
+\f3 \'a3\'ac\'ca\'b5\'bc\'ca\'d3\'eb
+\f7\fs28 \cf18 \cb16 rac_signalForSelector 
+\f3 \'ca\'b5\'cf\'d6\'cf\'e0\'cd\'ac\'a1\'a3\'d3\'c3\'d3\'da\'b7\'bd\'b7\'a8\'bd\'bb\'bb\'bb\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'b2\'e9\'d5\'d2sel\'b6\'d4\'d3\'a6\'b5\'c4
+\f7\fs26 \cf25 \cb16 objc_method_description.
+\f3\fs28 \cf18 \cb16 \'c8\'e7\'b9\'fbsel\'ca\'c7\'c4\'b3\'b8\'f6\'d0\'ad\'d2\'e9\'c4\'da\'b5\'c4\'b7\'bd\'b7\'a8\'b6\'f8\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'b5\'c4\'bb\'b0\'a3\'ac\'bb\'e1\'b8\'f8class\'a3\'a8\'d7\'d3\'c0\'e0\'a3\'a9\'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6\'cf\'e0\'cd\'acsel\'b5\'c4\'b7\'bd\'b7\'a8\'b5\'bd
+\f7 \cf24 \cb16 _objc_msgForward
+\f3 \cf18 \cb16 \'a1\'a3
+\f9\b\fs22 \cf18 \cb1 \CocoaLigature0 \
 \
 3.
 \f1 \'d7\'ee\'d6\'f7\'d2\'aa\'b5\'c4\'a3\'ba\'cd\'a8\'b9\'fd 
@@ -1733,7 +1748,9 @@ NS_OPTIONS(_type,_name) 2\'b8\'f6\'b2\'ce\'ca\'fd\'a1\'a3\'d3\'c3\'d3\'da\'b6\'a
 \cf18 \'b4\'cb\'d7\'d3\'c0\'e0\'a3\'ba\
 1\'a3\'a9\'d6\'d8\'b6\'a8\'cf\'f2\'b4\'cb\'d7\'d3\'c0\'e0\'b5\'c4
 \f7 forwardInvocation:
-\f3 \'b7\'bd\'b7\'a8\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'ca\'b5\'cf\'d6\'a3\'ac\'c4\'da\'b2\'bf\'c5\'d0\'b6\'cfsel\'ce\'aaalisSel\'b5\'c4\'d4\'ad\'c9\'ed\'bb\'b0\'a3\'ac\'d4\'f2\'d0\'de\'b8\'c4 invocation\'b5\'c4sel\'ce\'aaalisSel,\'c8\'bb\'ba\'f3\'b5\'f7\'d3\'c3\'a3\'ac\'b2\'a2\'c7\'d2\'bb\'f1\'c8\'a1\'b5\'bd\'b9\'d8\'c1\'aa\'b5\'c4\'d0\'c5\'ba\'c5subject\'a3\'ac\'bd\'f8\'d0\'d0sendNext\'a1\'a3\'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
+\f3 \'b7\'bd\'b7\'a8\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'ca\'b5\'cf\'d6\'a3\'ac\'c4\'da\'b2\'bf\'c5\'d0\'b6\'cfsel\'ce\'aaalisSel\'b5\'c4\'d4\'ad\'c9\'ed\'bb\'b0\'a3\'ac\'d4\'f2\'d0\'de\'b8\'c4 invocation\'b5\'c4sel\'ce\'aaalisSel,\'c8\'bb\'ba\'f3\'b5\'f7\'d3\'c3\'a3\'ac\'b2\'a2\'c7\'d2\'bb\'f1\'c8\'a1\'b5\'bd\'b9\'d8\'c1\'aa\'b5\'c4\'d0\'c5\'ba\'c5subject\'a3\'ac\'bd\'f8\'d0\'d0sendNext\'a3\'a8\'c8\'e7\'b9\'fb\'d3\'d0\'b9\'d8\'c1\'aa\'b1\'e4\'c1\'bf\'b5\'ab\'ca\'c7\'c3\'bb\'d3\'d0\cf18 \cb16 alisSel\'b1\'c8\'c8\'e7\'ca\'c7\'cd\'a8\'b9\'fd\'c4\'b3\'b8\'f6\'d0\'ad\'d2\'e9\'cc\'ed\'bc\'d3\'b5\'c4\'a3\'ac\'c4\'c7\'c3\'b4\'d2\'b2\'bb\'e1sendNext\'b2\'a2\'c8\'cf\'ce\'aa
+\f7 forwardInvocation
+\f3 \'c6\'a5\'c5\'e4\'b3\'c9\'b9\'a6\'a3\'a9\cf18 \cb16 \'a3\'a9\'a1\'a3\'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
 \f7 originalForwardInvocation
 \f3 \'a3\'a8\'c8\'e7\'b9\'fb\'b4\'e6\'d4\'da\'b5\'c4\'bb\'b0\'a3\'ac\'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
 \f7\fs30 doesNotRecognizeSelector
@@ -1782,6 +1799,19 @@ NS_OPTIONS(_type,_name) 2\'b8\'f6\'b2\'ce\'ca\'fd\'a1\'a3\'d3\'c3\'d3\'da\'b6\'a
 \f8\fs24 \cf0 \
 
 \f7\fs28 \cf18 		\cf17 if\cf18  (method == \cf17 NULL\cf18 ) \{\
+//
+\f3 \'d3\'c9\'d3\'da
+\f7 alisSel 
+\f3 \'d3\'d0\'b6\'d4\'d3\'a6\'b5\'c4
+\f7 imp
+\f3 \'a3\'ac\'cb\'f9\'d2\'d4\'b2\'bb\'bf\'c9\'c4\'dc\'ce\'aa
+\f7 nil
+\f3 \'a1\'a3\'b6\'f8\'d6\'ae\'c7\'b0\'b5\'c4sel\'d3\'c9\'d3\'da\'b1\'bb\'d6\'d8\'b6\'a8\'cf\'f2\'b5\'bd
+\f7 \cf24 \cb16 _objc_msgForward
+\f3 \cf18 \cb16 \'a3\'ac\'cb\'f9\'d2\'d4\'ce\'aanil.\'d5\'e2\'ca\'b1\'ba\'f2\'d6\'b1\'bd\'d3\'b7\'b5\'bb\'d8\'b8\'b8\'c0\'e0\'b5\'c4
+\f7 \cf18 \cb16 methodSignatureForSelector
+\f3 \'a3\'ac\'d2\'bb\'d1\'f9\'c4\'dc\'d5\'d2\'b5\'bd\'a1\'a3\'b6\'d4\'d3\'da\'b1\'be\'c0\'b4\'be\'cd\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'b5\'c4sel\'a3\'ac\'c4\'c7\'c3\'b4\'b8\'b8\'c0\'e0\'bf\'c9\'c4\'dc\'ca\'c7\'cd\'a8\'b9\'fd resolveInstanceMethod\'b5\'c4\'b7\'bd\'ca\'bd\'c0\'b4\'ca\'b5\'cf\'d6\'b5\'c4\'a1\'a3\'a3\'bf\'d2\'bb\'d1\'f9\'b7\'b5\'bb\'d8\'b8\'b8\'c0\'e0\'b5\'c4\'ca\'b5\'cf\'d6\'a1\'a3
+\f7 \cf18 \cb16 \
 //
 \f3 \'d5\'e2\'d6\'d6\'c7\'e9\'bf\'f6\'d6\'bb\'bb\'e1\'b7\'a2\'c9\'fa\'d4\'da\'a3\'ac\'c4\'b3\'b8\'f6obj\'b5\'c4\'c0\'e0\'a3\'a8\'b0\'fc\'ba\'ac\'b8\'b8\'c0\'e0\'a3\'a9\'cc\'e5\'cf\'b5\'d6\'d0\'a3\'ac\'b2\'a2\'c3\'bb\'d3\'d0\'d6\'b1\'bd\'d3\'ca\'b5\'cf\'d6sel\'a3\'ac\'d2\'b2\'b2\'bb\'ca\'c7\'cd\'a8\'b9\'fd
 \f7 +(\cf17 BOOL\cf18 )resolveInstanceMethod:(\cf17 SEL\cf18 )sel 
@@ -5259,6 +5289,7 @@ UIView\'b5\'c4
 
 \fs26 \cf6 \
 \
+\pard\pardeftab720\sl400\partightenfactor0
 
 \fs34 \cf2 gesture 
 \f6 recognizer
@@ -5483,7 +5514,8 @@ GCD\'b5\'c4\'d3\'c5\'b5\'e3\'a3\'ba\
 \f4\fs26 \cf6 They provide the speed of tuned assembly
 \f1\fs34 \cf2 \'a3\'a9\
 4.\'c4\'da\'b4\'e6\'d0\'a7\'c2\'ca\'b8\'fc\'b8\'df\'a3\'a8\'d2\'f2\'ce\'aa\'cf\'df\'b3\'cc\'d5\'bb\'b2\'bb\'bb\'e1\'d6\'cd\'c1\'f4\'d4\'daapp\'c4\'da\'b4\'e6\'c4\'da\'a3\'a9\'a1\'a3\
-\cb1 5. 
+\pard\tx334\pardeftab334\pardirnatural\partightenfactor0
+\cf2 \cb1 5. 
 \f4\fs26 \cf6 \cb3 They do not trap to the kernel under load\
 6.
 \f1 \'cc\'e1\'bd\'bb\'b5\'bd
