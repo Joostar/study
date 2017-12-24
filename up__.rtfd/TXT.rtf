@@ -1708,8 +1708,13 @@ RAC
 \f3 \'ca\'b5\'cf\'d6\'cf\'e0\'cd\'ac\'a1\'a3\'d3\'c3\'d3\'da\'b7\'bd\'b7\'a8\'bd\'bb\'bb\'bb\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'b2\'e9\'d5\'d2sel\'b6\'d4\'d3\'a6\'b5\'c4
 \f7\fs26 \cf25 \cb16 objc_method_description.
 \f3\fs28 \cf18 \cb16 \'c8\'e7\'b9\'fbsel\'ca\'c7\'c4\'b3\'b8\'f6\'d0\'ad\'d2\'e9\'c4\'da\'b5\'c4\'b7\'bd\'b7\'a8\'b6\'f8\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'b5\'c4\'bb\'b0\'a3\'ac\'bb\'e1\'b8\'f8class\'a3\'a8\'d7\'d3\'c0\'e0\'a3\'a9\'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6\'cf\'e0\'cd\'acsel\'b5\'c4\'b7\'bd\'b7\'a8\'b5\'bd
-\f7 \cf24 \cb16 _objc_msgForward
-\f3 \cf18 \cb16 \'a1\'a3
+\f7 \cf24 \cb16 _objc_msgForward(
+\f3 \'cd\'a8\'b9\'fd\'a3\'ba
+\f7\fs26 \cf24 \cb16 class_addMethod\cf18 \cb16 (class, selector, \cf24 \cb16 _objc_msgForward\cf18 \cb16 , typeEncoding)
+\f3 \'a3\'ac\'cb\'f9\'d2\'d4\'ba\'f3\'d0\'f8\'b5\'c4\'b2\'e9\'d5\'d2sel\'b6\'d4\'d3\'a6\'b5\'c4method\'ca\'b1\'ba\'f2\'a3\'ac\'c4\'dc\'b1\'a3\'d6\'a4method \'b2\'bb\'bb\'e1\'ce\'aanil\'a3\'a9
+\fs28 \cf24 \cb16 \'a3\'ac\'d7\'ee\'d6\'d5\'b5\'f7\'d3\'c3\'d0\'ad\'d2\'e9\'b7\'bd\'b7\'a8\'ca\'b1\'ba\'f2\'a3\'ac\'bb\'e1\'d4\'da
+\f7 \cf18 \cb16 forwardInvocation
+\f3 \cf24 \cb16 \'b7\'bd\'b7\'a8\'c4\'da\'bd\'f8\'d0\'d0\'c5\'d0\'b6\'cf\'b4\'a6\'c0\'ed\'a3\'ac\'b4\'d3\'b6\'f8\'b1\'dc\'c3\'e2crash\cf18 \cb16 \'a1\'a3
 \f9\b\fs22 \cf18 \cb1 \CocoaLigature0 \
 \
 3.
@@ -1717,11 +1722,19 @@ RAC
 \f7\b0\fs28 \cb16 \CocoaLigature1 NSObject (RACSelectorSignal) 
 \f3 \'c0\'a9\'d5\'b9\'a3\'ac\'cc\'ed\'bc\'d3\'c1\'cb
 \f7 rac_signalForSelector
-\f3 \'a3\'ba\'b7\'bd\'b7\'a8\'a1\'a3\'c4\'da\'b2\'bf\'ca\'b5\'cf\'d6\'d4\'ad\'c0\'ed\'a3\'ba
-\f7 \
+\f3 \'a3\'ba\'b7\'bd\'b7\'a8\'a1\'a3\'c4\'da\'b2\'bf\'ca\'b5\'cf\'d6\'d4\'ad\'c0\'ed\'a3\'ba\
+\
+\'cd\'a8\'b9\'fd\'ca\'b9\'d3\'c3\'c9\'fa\'b3\'c9\'d7\'d3\'c0\'e0\'b5\'c4\'b7\'bd\'ca\'bd\'bf\'c9\'d2\'d4\'d7\'f6\'b5\'bd\'a3\'ba1.\'b2\'bb\'b8\'c4\'b1\'e4\'d5\'e6\'d5\'fd\'c0\'e0\'b5\'c4\'c8\'ce\'ba\'ce\'b7\'bd\'b7\'a8\'bd\'e1\'b9\'b9\'a3\'ac\'d6\'bb\'ca\'c7\'b8\'c4\'b1\'e4\'c4\'b3\'b8\'f6obj\'a3\'ac\'b6\'f8\'b2\'bb\'b8\'c4\'c6\'e4\'d5\'e6\'d5\'fd\'b5\'c4\'c0\'e0\'a1\'a32.\'bf\'c9\'d2\'d4\'b1\'a3\'d6\'a4\'b2\'bb\'bb\'e1\'ca\'d5\'b5\'bd\'bf\'ec\'cb\'d9\'cf\'fb\'cf\'a2\'d7\'aa\'b7\'a2
+\f7\fs26 \cf18 \cb16 -(\cf17 void\cf18 )forwardInvocation:(\cf25 \cb16 NSInvocation\cf18 \cb16  *)anInvocation
+\f3\fs28 \cf18 \cb16 \'b5\'c4\'bd\'d8\'bb\'f1\'a3\'ac\'d2\'f2\'ce\'aa`\'c9\'fa\'b3\'c9\'b5\'c4\'d7\'d3\'c0\'e0`\'b1\'be\'c9\'ed\'b2\'a2\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'bf\'ec\'cb\'d9\'cf\'fb\'cf\'a2\'d7\'aa\'b7\'a2\'a3\'ac\'cb\'f9\'d2\'d4\'b6\'d4\'d3\'da
+\f7 \cf24 \cb16 _objc_msgForward
+\f3 \cf18 \cb16 \'b5\'c4\'b5\'f7\'d3\'c3\'a3\'ac\'b6\'bc\'bb\'e1\'d7\'df\'b5\'bd\'b1\'ea\'d7\'bc\'cf\'fb\'cf\'a2\'d7\'aa\'b7\'a2\'a1\'a3\
+\
 \pard\pardeftab720\sl300\partightenfactor0
 
-\f3 \cf18 \'cd\'a8\'b9\'fd\'b8\'f8
+\f7 \cf18 \
+
+\f3 \'cd\'a8\'b9\'fd\'b8\'f8
 \f7 objcet
 \f3 \'b5\'c4\'c0\'e0\'a3\'ac\'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6\'d7\'d3\'c0\'e0\'a3\'ac\'c8\'bb\'ba\'f3\'bd\'abobject\'c9\'e8\'d6\'c3\'ce\'aa\'b4\'cb\'d7\'d3\'c0\'e0\'b5\'c4\'ca\'b5\'c0\'fd\'b1\'e4\'c1\'bf\'a1\'a3\'b4\'cb\'d7\'d3\'c0\'e0\'c4\'da\'d6\'d8\'d0\'b4\'c1\'cbclass \'b7\'bd\'b7\'a8\'a3\'ac\'bc\'d9\'d7\'b0\'ce\'aa\'d4\'ad\'c0\'b4\'b5\'c4\'c0\'e0\'a1\'a3\
 \pard\tx334\pardeftab334\pardirnatural\partightenfactor0
@@ -1761,7 +1774,7 @@ RAC
 \f7 respondsToSelector:
 \f3 \'b7\'bd\'b7\'a8\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'ca\'b5\'cf\'d6\'a1\'a3\'c4\'da\'b2\'bf\'c5\'d0\'b6\'cfsel\'b5\'c4imp\'d3\'a6\'b8\'c3\'ce\'aa
 \f7 \cf24 _objc_msgForward
-\f3 \cf18 \'a3\'ac\'c7\'d2\'b4\'cb\'b6\'d4\'cf\'f3\'b4\'e6\'d4\'dasel\'b6\'d4\'d3\'a6\'b5\'c4alisSel\'a3\'ac\'d4\'f2\'b7\'b5\'bb\'d8YES\'a3\'ac\'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
+\f3 \cf18 \'a3\'ac\'c7\'d2\'b4\'cb\'b6\'d4\'cf\'f3\'b4\'e6\'d4\'dasel\'b6\'d4\'d3\'a6\'b5\'c4alisSel\'a3\'ac\'d4\'f2\'b7\'b5\'bb\'d8YES(\'d5\'e2\'d1\'f9\'b5\'c4\'bb\'b0\'a3\'ac\'b6\'d4\'d3\'da\'b4\'d3\'c4\'b3\'b8\'f6\'ce\'b4\'ca\'b5\'cf\'d6\'b5\'c4\'d0\'ad\'d2\'e9\'d6\'d0\'cc\'ed\'bc\'d3\'b5\'c4\'b7\'bd\'b7\'a8\'d2\'b2\'c4\'dc\'b1\'a3\'d6\'a4\'d2\'bb\'d1\'f9\'b7\'b5\'bb\'d8YES)\'a3\'ac\'b7\'f1\'d4\'f2\'b5\'f7\'d3\'c3
 \f7 originalRespondsToSelector
 \f3 \'a1\'a3\
 3\'a3\'a9\'d0\'de\'b8\'c4\'b4\'cb\'d7\'d3\'c0\'e0\'b5\'c4class\'b7\'bd\'b7\'a8\'a3\'ac\'b7\'b5\'bb\'d8\'ce\'aa\'c6\'e4\'b8\'b8\'c0\'e0\'a3\'a8\'d2\'b2\'be\'cd\'ca\'c7obj\'b1\'be\'c0\'b4\'b5\'c4class\'a3\'a9\'a1\'a3\
@@ -1795,27 +1808,32 @@ RAC
 \f8\fs24 \cf0 \
 \pard\tx334\pardeftab334\pardirnatural\partightenfactor0
 
-\f7\fs28 \cf18 		\cf25 Method\cf18  method = \cf24 class_getInstanceMethod\cf18 (actualClass, selector);
-\f8\fs24 \cf0 \
-
-\f7\fs28 \cf18 		\cf17 if\cf18  (method == \cf17 NULL\cf18 ) \{\
-//
+\f7\fs28 \cf18 		\cf25 Method\cf18  method = \cf24 class_getInstanceMethod\cf18 (actualClass, selector);\
+\pard\tx334\pardeftab334\pardirnatural\partightenfactor0
+\cf18 \cb16 //
 \f3 \'d3\'c9\'d3\'da
 \f7 alisSel 
 \f3 \'d3\'d0\'b6\'d4\'d3\'a6\'b5\'c4
 \f7 imp
 \f3 \'a3\'ac\'cb\'f9\'d2\'d4\'b2\'bb\'bf\'c9\'c4\'dc\'ce\'aa
 \f7 nil
-\f3 \'a1\'a3\'b6\'f8\'d6\'ae\'c7\'b0\'b5\'c4sel\'d3\'c9\'d3\'da\'b1\'bb\'d6\'d8\'b6\'a8\'cf\'f2\'b5\'bd
+\f3 \'a3\'ac\'b6\'d4\'d3\'da\'d0\'ad\'d2\'e9\'d6\'d0\'ce\'b4\'ca\'b5\'cf\'d6\'b5\'c4\'b7\'bd\'b7\'a8\'a3\'ac\'d3\'c9\'d3\'da\'b6\'af\'cc\'ac\'cc\'ed\'bc\'d3\'c1\'cb\'d2\'bb\'b8\'f6method\'a3\'a8\'cd\'a8\'b9\'fdclass_addMethod\'a3\'ac\'c6\'e4imp\'ce\'aa
 \f7 \cf24 \cb16 _objc_msgForward
-\f3 \cf18 \cb16 \'a3\'ac\'cb\'f9\'d2\'d4\'ce\'aanil.\'d5\'e2\'ca\'b1\'ba\'f2\'d6\'b1\'bd\'d3\'b7\'b5\'bb\'d8\'b8\'b8\'c0\'e0\'b5\'c4
+\f3 \cf18 \cb16 \'a3\'a9\'a3\'ac\'cb\'f9\'d2\'d4\'d2\'b2\'b2\'bb\'bb\'e1\'ce\'aanil\'a1\'a3  \
+\pard\tx334\pardeftab334\pardirnatural\partightenfactor0
+
+\f8\fs24 \cf0 \cb16 \
+\pard\tx334\pardeftab334\pardirnatural\partightenfactor0
+
+\f7\fs28 \cf18 		\cf17 if\cf18  (method == \cf17 NULL\cf18 ) \{
+\f3 \
+// \'b6\'f8\'d6\'ae\'c7\'b0\'b5\'c4sel\'d3\'c9\'d3\'da\'b1\'bb\'d6\'d8\'b6\'a8\'cf\'f2\'b5\'bd
+\f7 \cf24 \cb16 _objc_msgForward
+\f3 \cf18 \cb16 \'a3\'ac\'cb\'f9\'d2\'d4\'ce\'aanil.\'d5\'e2\'ca\'b1\'ba\'f2\'d6\'b1\'bd\'d3\'b7\'b5\'bb\'d8\'b8\'b8\'c0\'e0(\'d2\'b2\'be\'cd\'ca\'c7\'d5\'e6\'d5\'fd\'b5\'c4\'c0\'e0\'a3\'a9\'b5\'c4
 \f7 \cf18 \cb16 methodSignatureForSelector
-\f3 \'a3\'ac\'d2\'bb\'d1\'f9\'c4\'dc\'d5\'d2\'b5\'bd\'a1\'a3\'b6\'d4\'d3\'da\'b1\'be\'c0\'b4\'be\'cd\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'b5\'c4sel\'a3\'ac\'c4\'c7\'c3\'b4\'b8\'b8\'c0\'e0\'bf\'c9\'c4\'dc\'ca\'c7\'cd\'a8\'b9\'fd resolveInstanceMethod\'b5\'c4\'b7\'bd\'ca\'bd\'c0\'b4\'ca\'b5\'cf\'d6\'b5\'c4\'a1\'a3\'a3\'bf\'d2\'bb\'d1\'f9\'b7\'b5\'bb\'d8\'b8\'b8\'c0\'e0\'b5\'c4\'ca\'b5\'cf\'d6\'a1\'a3
-\f7 \cf18 \cb16 \
-//
-\f3 \'d5\'e2\'d6\'d6\'c7\'e9\'bf\'f6\'d6\'bb\'bb\'e1\'b7\'a2\'c9\'fa\'d4\'da\'a3\'ac\'c4\'b3\'b8\'f6obj\'b5\'c4\'c0\'e0\'a3\'a8\'b0\'fc\'ba\'ac\'b8\'b8\'c0\'e0\'a3\'a9\'cc\'e5\'cf\'b5\'d6\'d0\'a3\'ac\'b2\'a2\'c3\'bb\'d3\'d0\'d6\'b1\'bd\'d3\'ca\'b5\'cf\'d6sel\'a3\'ac\'d2\'b2\'b2\'bb\'ca\'c7\'cd\'a8\'b9\'fd
+\f3 \'a3\'ac\'d2\'bb\'d1\'f9\'c4\'dc\'d5\'d2\'b5\'bd\'a1\'a3\'b6\'d4\'d3\'da\'b1\'be\'c0\'b4\'d4\'da\'d5\'e6\'d5\'fd\'b5\'c4\'c0\'e0\'d6\'d0\'be\'cd\'c3\'bb\'d3\'d0\'ca\'b5\'cf\'d6\'b5\'c4sel\'a3\'ac\'b2\'e9\'d5\'d2\'bd\'e1\'b9\'fb\'d2\'b2\'ce\'aanil\'a3\'ac\'b5\'ab\'ca\'c7\'bf\'c9\'c4\'dc\'ca\'c7\'d5\'e6\'d5\'fd\'b5\'c4\'c0\'e0\'d6\'d0\'b6\'af\'cc\'ac\'ca\'b5\'cf\'d6\'b5\'c4\'a3\'a8\'b1\'c8\'c8\'e7\'cd\'a8\'b9\'fd\'c6\'e4\'ca\'b5\'cf\'d6\'b5\'c4\'cf\'fb\'cf\'a2\'d7\'aa\'b7\'a2\'c1\'f7\'b3\'cc\'a3\'a9\'a3\'ac\'cb\'f9\'d2\'d4\'d2\'bb\'d1\'f9\'b7\'b5\'bb\'d8\'c6\'e4\'d5\'e6\'d5\'fd\'c0\'e0\'b5\'c4\'ca\'b5\'cf\'d6\'a1\'a3\cf18 \cb16 \'c4\'b3\'b8\'f6obj\'b5\'c4\'c0\'e0\'a3\'a8\'b0\'fc\'ba\'ac\'b8\'b8\'c0\'e0\'a3\'a9\'cc\'e5\'cf\'b5\'d6\'d0\'a3\'ac\'b2\'a2\'c3\'bb\'d3\'d0\'d6\'b1\'bd\'d3\'ca\'b5\'cf\'d6sel\'a3\'ac\'d2\'b2\'b2\'bb\'ca\'c7\'cd\'a8\'b9\'fd
 \f7 +(\cf17 BOOL\cf18 )resolveInstanceMethod:(\cf17 SEL\cf18 )sel 
-\f3 \'b5\'c4\'d0\'ce\'ca\'bd\'c0\'b4\'b6\'af\'cc\'ac\'bd\'e2\'be\'f6\'a3\'a8\'a3\'a9\'d2\'f2\'ce\'aa\'c8\'e7\'b9\'fb\'b6\'af\'cc\'ac\'bd\'e2\'be\'f6\'a3\'ac\'c4\'c7\'c3\'b4
+\f3 \'b5\'c4\'d0\'ce\'ca\'bd\'c0\'b4\'b6\'af\'cc\'ac\'bd\'e2\'be\'f6\'a3\'a8\'d2\'f2\'ce\'aa\'c8\'e7\'b9\'fb\'b6\'af\'cc\'ac\'bd\'e2\'be\'f6\'a3\'ac\'c4\'c7\'c3\'b4
 \f7 \cf24 class_getInstanceMethod
 \f3 \cf18 \'b9\'fd\'b3\'cc\
 \'d6\'d0\'bb\'e1\'b5\'f7\'d3\'c3\'b4\'cb\'bd\'e2\'be\'f6\'a3\'ac\'d2\'c0\'c8\'bbmethod != NULL.\'a3\'a9\'b6\'f8\'ca\'c7\'cd\'a8\'b9\'fd \'cf\'fb\'cf\'a2\'d7\'aa\'b7\'a2\'a3\'ac\'c0\'b4\'ca\'b5\'cf\'d6\'c4\'b3\'b8\'f6sel\'b5\'c4\'ca\'b1\'ba\'f2\'a1\'a3\
@@ -1911,9 +1929,23 @@ RAC\'c4\'da\'b6\'d4\'b7\'bd\'b7\'a8\'b5\'c4objcTypeEncoding\'a3\'a8\'cd\'a8\'b9\
 \f3 \'cd\'ac\'d1\'f9\'d2\'b2\'ba\'dc\'c4\'d1\'c8\'b7\'b6\'a8\'ca\'c7\'b5\'f7\'d3\'c3objc_msgSendSuper \'bb\'b9\'ca\'c7 objc_msgSendSuper_stret.\
 
 \fs28 \
+\pard\pardeftab720\sl270\partightenfactor0
+
+\f1\b\fs22 \cf18 \cb1 \CocoaLigature0 \'b6\'d4\'d3\'da
+\f9 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f7\b0\fs30 \cf17 \cb16 \CocoaLigature1 const\cf18  \cf17 char\cf18  * \cf17 _Nullable
+\f8\fs24 \cf0 \
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\f7\fs30 \cf18 method_getTypeEncoding(\cf25 Method\cf18  \cf17 _Nonnull\cf18  m) 
+\f3 \'b7\'b5\'bb\'d8\'d6\'b5\'d2\'e2\'d2\'e5\'a3\'ba\'b7\'b5\'bb\'d8\'d6\'b5\'ce\'aa\'d2\'bb\'b8\'f6\'d7\'d6\'b7\'fb\'b4\'ae\'a3\'ac\'b4\'fa\'b1\'ed\'b5\'c4\'d2\'e2\'cb\'bc\'ce\'aa\'a3\'ba\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd+\'b2\'ce\'ca\'fd\'c1\'d0\'b1\'ed\'d5\'bc\'d3\'c3\'c4\'da\'b4\'e6\'b5\'c4\'d7\'dc\'b3\'a4\'b6\'c8+\'c3\'bf\'b8\'f6\'b2\'ce\'ca\'fd\'b5\'c4\'c0\'e0\'d0\'cd+\'c3\'bf\'b8\'f6\'b2\'ce\'ca\'fd\'b5\'c4\'c6\'f0\'ca\'bc\'c6\'ab\'d2\'c6\'c1\'bf\'b5\'d8\'d6\'b7\
+\pard\tx358\pardeftab358\pardirnatural\partightenfactor0
+
+\fs28 \cf18 \cb16 \
 \pard\pardeftab720\sl300\partightenfactor0
 \cf18 \
-\
 //\'b9\'d8\'d3\'daRAC\'b5\'c4OnExit\
 \'ca\'b5\'bc\'ca\'be\'d9\'c0\'fd\'c8\'e7\'cf\'c2\'a3\'ba\
 \pard\tx334\pardeftab334\pardirnatural\partightenfactor0
@@ -2194,8 +2226,43 @@ addObserverToValue(value);
 \cf18 \
 \
 \
+\pard\tx310\pardeftab310\pardirnatural\partightenfactor0
+
+\f7\b0\fs26 \cf18 \cb16 \CocoaLigature1 - (\cf17 BOOL\cf18 )isMemberOfClass:(\cf20 Class\cf18 )cls \{
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18     \cf17 return\cf18  [\cf17 self\cf18  \cf17 class\cf18 ] == cls;
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18 \}
+\f8\fs24 \cf0 \
 \
-\
+
+\f7\fs26 \cf18 - (\cf17 BOOL\cf18 )isKindOfClass:(\cf20 Class\cf18 )cls \{
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18     \cf17 for\cf18  (\cf20 Class\cf18  tcls = [\cf17 self\cf18  \cf17 class\cf18 ]; tcls; tcls = tcls->\cf20 superclass\cf18 ) \{
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18         \cf17 if\cf18  (tcls == cls) \cf17 return\cf18  \cf17 YES\cf18 ;
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18     \}
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18     \cf17 return\cf18  \cf17 NO\cf18 ;
+\f8\fs24 \cf0 \
+
+\f7\fs26 \cf18 \}\
+
+\f3 \'cb\'f9\'d2\'d4
+\f7 RAC
+\f3 \'c4\'da\'b2\'bf\'b2\'bb\'d0\'e8\'d2\'aa\'b8\'c4\'d0\'b4
+\f7  
+\f3 \'c9\'cf\'c3\'e6\'c1\'bd\'b8\'f6\'b7\'bd\'b7\'a8
+\f9\b\fs22 \cf18 \cb1 \CocoaLigature0 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf18 \
 \
 //\
 \pard\tx334\pardeftab334\pardirnatural\partightenfactor0
@@ -2661,7 +2728,7 @@ union MoneyUnion \{ float alone; double down; \};
 \pard\tx358\pardeftab358\pardirnatural\partightenfactor0
 
 \f7\fs30 \cf18 method_getTypeEncoding(\cf25 Method\cf18  \cf17 _Nonnull\cf18  m) 
-\f3 \'b7\'b5\'bb\'d8\'d6\'b5\'d2\'e2\'d2\'e5\'a3\'ba
+\f3 \'b7\'b5\'bb\'d8\'d6\'b5\'d2\'e2\'d2\'e5\'a3\'ba\'b7\'b5\'bb\'d8\'d6\'b5\'ce\'aa\'d2\'bb\'b8\'f6\'d7\'d6\'b7\'fb\'b4\'ae\'a3\'ac\'b4\'fa\'b1\'ed\'b5\'c4\'d2\'e2\'cb\'bc\'ce\'aa\'a3\'ba\'b7\'b5\'bb\'d8\'d6\'b5\'c0\'e0\'d0\'cd+\'b2\'ce\'ca\'fd\'c1\'d0\'b1\'ed\'d5\'bc\'d3\'c3\'c4\'da\'b4\'e6\'b5\'c4\'d7\'dc\'b3\'a4\'b6\'c8+\'c3\'bf\'b8\'f6\'b2\'ce\'ca\'fd\'b5\'c4\'c0\'e0\'d0\'cd+\'c3\'bf\'b8\'f6\'b2\'ce\'ca\'fd\'b5\'c4\'c6\'f0\'ca\'bc\'c6\'ab\'d2\'c6\'c1\'bf\'b5\'d8\'d6\'b7
 \f7 \
 
 \f3 \'be\'d9\'c0\'fd\'a3\'ba\
@@ -3894,6 +3961,9 @@ setValue:forKeypath:\'b5\'c4\'c4\'ac\'c8\'cf\'ca\'b5\'cf\'d6\'a3\'ac\'b6\'d4\'c3
 \f1\fs28 \cf45 \'cb\'f9\'d3\'d0\'b7\'bd\'b7\'a8\'b5\'c4 
 \f8 proxy
 \f1 \'a3\'ac\'b4\'cbproxy\'b0\'d1\'ca\'d5\'b5\'bd\'b5\'c4\'cb\'f9\'d3\'d0\'b7\'bd\'b7\'a8\'b6\'bc\'d7\'aa\'b7\'a2\'b8\'f8\'d5\'e2\'b8\'f6\'b3\'c9\'d4\'b1\'b1\'e4\'c1\'bf\'a1\'a3\
+\
+\'a3\'a8\'b6\'d4\'d3\'da2\'a1\'a23\'b5\'c4\'cb\'b3\'d0\'f2\'a3\'ac\'b5\'b1\'ca\'f4\'d0\'d4\'b6\'a8\'d2\'e5\'ce\'aacopy\'a1\'a2\'b7\'c7copy\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'bb\'e1\'d3\'d0\'cb\'f9\'b2\'bb\'cd\'ac\'a1\'a3\'c8\'e7\'b9\'fb\'ca\'c7\'b7\'c7copy\'b5\'c4\'a3\'ac\'b0\'b4\'d5\'d52-3\'a3\'ac\'c8\'e7\'b9\'fb\'ca\'c7copy\'b5\'c4\'a3\'ac\'b0\'b4\'d5\'d53-2.\'d7\'dc\'d6\'ae\'d0\'e8\'d2\'aa\'b2\'e2\'ca\'d4\'a1\'a3\'a1\'a3\'bf\'c9\'c4\'dc\'bb\'e1\'d3\'d0\'ce\'ca\'cc\'e2\'a3\'a9\
+\
 4.\'c8\'e7\'b9\'fb\'d2\'d4\'c9\'cf\'b6\'bc\'c3\'bb\'d5\'d2\'b5\'bd\'a3\'ac\'b7\'b5\'bb\'d8\'d2\'bb\'b8\'f6
 \f8 proxy
 \f1 \'a3\'ac\'b5\'b1\'b4\'cbproxy\'ca\'d5\'b5\'bd\'c8\'ce\'ba\'ce
